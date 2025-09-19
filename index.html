@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI同僚たまごっち - 社内ハッカソン</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥚 AI同僚たまごっち</h1>
+            <p>あなたの同僚をAIペットとして育成しよう！</p>
+        </header>
+
+        <main class="game-area">
+            <div class="pet-display">
+                <div class="pet-container">
+                    <div id="pet" class="pet">🐣</div>
+                    <div class="pet-name">新人くん</div>
+                </div>
+
+                <div class="status-bar">
+                    <div class="status-item">
+                        <span>やる気:</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="motivation" style="width: 70%;"></div>
+                        </div>
+                        <span id="motivation-value">70</span>
+                    </div>
+
+                    <div class="status-item">
+                        <span>コーヒー:</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="coffee" style="width: 50%;"></div>
+                        </div>
+                        <span id="coffee-value">50</span>
+                    </div>
+
+                    <div class="status-item">
+                        <span>残業力:</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="overtime" style="width: 30%;"></div>
+                        </div>
+                        <span id="overtime-value">30</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-panel">
+                <h3>アクション</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="feedCoffee()">☕ コーヒーをあげる</button>
+                    <button class="action-btn" onclick="praise()">👏 褒める</button>
+                    <button class="action-btn" onclick="giveOvertime()">💼 残業させる</button>
+                    <button class="action-btn" onclick="chat()">💬 話しかける</button>
+                </div>
+            </div>
+
+            <div class="chat-area">
+                <h3>会話ログ</h3>
+                <div class="chat-log" id="chatLog">
+                    <div class="chat-message pet-message">
+                        🐣「初めまして！よろしくお願いします！」
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="何か話しかけてみてください...">
+                    <button onclick="sendMessage()">送信</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🚀 AIハッカソン作品 - チーム4</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
